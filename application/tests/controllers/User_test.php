@@ -10,6 +10,18 @@
 
 class User_test extends TestCase
 {	
+
+	//test case for to signup the user
+	public function test_signup()
+	{
+		$output = $this->request('POST', 'users/signup', [
+				'name' => 'Mike Smitha',
+				'username' => 'mike@eapaale.jp',
+				'password' => '123456'
+			]);
+		$this->assertResponseCode(200);
+	}
+
 	
 	public function test_APPPATH()
 	{
